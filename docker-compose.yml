@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  master:
+    build: master
+    expose:
+     - '5432'
+
+  slave:
+    build: slave
+    expose:
+     - '5432'
+    links:
+     - 'master'
